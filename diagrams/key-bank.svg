@@ -1,0 +1,21 @@
+<!-- ============================================================
+     Lifted straight out of the book: page 39 of City Collection.
+     These are the same curves as the printed page, not a trace
+     and not a screenshot. One thing was changed and one only:
+     every colour became currentColor, so the drawing takes its
+     colour from the CSS and comes out white on the chapter
+     colour. There is no background here on purpose — the
+     section colour is meant to show through.
+     Made by pdfwork/extract_diagram.py
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64.00 64.00"
+     role="img" aria-labelledby="t39">
+
+  <title id="t39">The bank icon.</title>
+
+  <g transform="translate(-430.000, -118.000)">
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 463.26 159.81 C 463.25 160.73 462.9 161.11 462.7 161.33 C 462.37 161.68 460.99 161.5 460.98 160.83 L 460.8 151.88 L 451.13 151.84 L 451.08 160.1 C 451.08 160.77 450.8 161.09 450.55 161.33 C 450.21 161.68 448.86 161.5 448.84 160.83 L 448.66 151.88 L 439.32 151.79 C 438.58 151.78 437.75 151.29 437.69 150.68 C 437.63 150.06 438.59 149.32 439.36 149.32 C 441.71 149.79 442.87 148.79 444.36 147.48 L 462 132 L 480.12 147.79 C 481.36 148.86 482.27 149.79 484.3 149.31 C 484.96 149.32 485.51 149.52 485.85 149.73 C 486.49 150.11 486.46 151.67 485.51 151.68 L 475.42 151.86 L 475.36 160.09 C 475.36 160.78 475.07 161.09 474.83 161.33 C 474.5 161.68 473.13 161.5 473.12 160.83 L 472.94 151.88 L 463.28 151.84 Z M 477.94 149.27 L 462.05 135.26 L 446.2 149.26 Z M 477.94 149.27 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 476.21 179.96 L 447.84 180 C 446.11 180 444.51 179.54 442.89 179.03 C 437.09 176.51 432.94 171.35 432.02 165.02 L 432 136.21 C 432 127.38 438.9 119.98 447.84 120 L 476.87 120.05 C 484.14 120.06 491.93 128.41 491.94 135.38 L 491.97 164.18 C 491.98 172.77 484.96 179.95 476.21 179.96 M 476.78 177.45 C 483.97 177.44 489.55 171.09 489.53 164.19 L 489.46 135.01 C 489.45 129.82 482.87 122.47 476.74 122.46 L 447.82 122.43 C 440.77 122.43 434.53 128.19 434.54 135.38 L 434.57 164.99 C 434.57 170.15 441.14 177.5 447.27 177.49 Z M 476.78 177.45 "/>
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+<!-- ============================================================
+     Lifted straight out of the book: page 27 of City Collection.
+     These are the same curves as the printed page, not a trace
+     and not a screenshot. One thing was changed and one only:
+     every colour became currentColor, so the drawing takes its
+     colour from the CSS and comes out white on the chapter
+     colour. There is no background here on purpose — the
+     section colour is meant to show through.
+     Made by pdfwork/extract_diagram.py
+
+     ============================================================
+     THIS FILE IS ONE THIRD OF favorites.svg. See fav-home.svg
+     for the full account of why the lettering came off.
+
+     This is the one circle that never had a word of its own. The
+     book letters HOME under the house and WORK under the
+     briefcase, and under each of those it also letters a small
+     "Add" - but the plus circle itself stands unlabelled, because
+     on the page it is obviously the add button and the two Adds
+     above it have already said so.
+
+     On screen that does not hold. The three icons are now three
+     separate figures in a plate, each one named by its own
+     caption, and a plate with two captions and a gap would read
+     as a mistake rather than as an argument. So this one is
+     captioned "Add" in the chapter - which is not an invention,
+     it is the book's own word for it, lifted from the lettering
+     that sat under the other two and that this change removed.
+     The alternative was to leave the word drawn inside the
+     artwork for two circles and absent for the third, which is
+     exactly the inconsistency being fixed.
+
+     Centre 470.6, 450.24, radius 78.29. Same circle as the house
+     and the briefcase, 300 units further down the printed page.
+     Wrapper translate is the centre minus 82.
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 164 164"
+     role="img" aria-labelledby="t27add">
+
+  <title id="t27add">A circle holding a plus sign, for adding a place of your own.</title>
+
+  <g transform="translate(-388.600, -368.240)">
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 548.89 450.24 C 548.89 493.46 513.83 528.5 470.59 528.5 C 427.35 528.5 392.29 493.46 392.29 450.24 C 392.29 407.02 427.35 371.98 470.59 371.98 C 513.83 371.98 548.89 407.02 548.89 450.24 M 543.44 450.24 C 543.44 410.03 510.82 377.43 470.59 377.43 C 430.36 377.43 397.74 410.03 397.74 450.24 C 397.74 490.46 430.36 523.05 470.59 523.05 C 510.82 523.05 543.44 490.46 543.44 450.24 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 474.01 484.62 C 474.01 486.77 472.14 488.02 470.52 487.99 C 468.67 487.95 467.16 486.48 467.16 484.49 L 467.16 453.66 L 436.32 453.67 C 434.32 453.67 432.88 452.16 432.82 450.31 C 432.78 448.72 434.08 446.83 436.07 446.82 L 467.16 446.81 L 467.17 415.86 C 467.17 413.9 468.8 412.55 470.52 412.5 C 472.22 412.45 474.02 413.85 474.02 415.86 L 474.02 446.81 L 504.99 446.82 C 506.91 446.82 508.28 448.47 508.35 450.07 C 508.43 451.89 507.04 453.66 504.99 453.66 L 474.02 453.67 Z M 474.01 484.62 "/>
+  </g>
+</svg>

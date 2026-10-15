@@ -1,0 +1,61 @@
+<!-- ============================================================
+     Lifted straight out of the book: page 27 of City Collection.
+     These are the same curves as the printed page, not a trace
+     and not a screenshot. One thing was changed and one only:
+     every colour became currentColor, so the drawing takes its
+     colour from the CSS and comes out white on the chapter
+     colour. There is no background here on purpose — the
+     section colour is meant to show through.
+     Made by pdfwork/extract_diagram.py
+
+     ============================================================
+     THIS FILE IS ONE THIRD OF favorites.svg, AND THE LETTERING
+     THAT USED TO SIT BESIDE IT IS GONE.
+
+     What it was before: favorites.svg was a single tall drawing
+     holding all three circles - the house, the briefcase, and the
+     plus - with the words HOME, Add, WORK and Add drawn INTO the
+     artwork as outlined letterforms beside two of them. They were
+     not text elements. They were paths, the same kind of path as
+     the house and the briefcase, so they could not be read by a
+     screen reader, could not reflow, could not be translated, and
+     could not be set in the caption face the rest of this site
+     uses. They came out whatever size the drawing happened to be
+     scaled to, which on a narrow screen was smaller than any
+     other label on the page.
+
+     Why it changed: a name under a picture is a caption, and this
+     site already has one way of doing captions. Every other
+     drawing on these four chapters is named by a <figcaption> in
+     the page, in the caption face, at the caption size, black on
+     white or white on the chapter colour as the mode decides. The
+     three circles had been the one exception, naming themselves
+     from the inside. So the lettering was dropped and the naming
+     handed back to the HTML, which is where the other hundred-odd
+     captions on this site already live.
+
+     Also gone: the invisible clipping rectangle the extractor
+     left at the top of favorites.svg. It was filled with "none"
+     and drew nothing. It only existed to crop a page-sized
+     canvas, and this file's viewBox does that job now.
+
+     The circle is untouched. Its centre in the book's own
+     coordinates is 470.6, 150.32 and its radius is 78.29, so a
+     164-unit box centred on it leaves 3.7 units of air all round
+     - enough that the stroke does not graze the edge, tight
+     enough that three of these sit at the same weight in a row.
+     That is the whole of the arithmetic: the wrapper translate
+     below is the centre minus 82.
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 164 164"
+     role="img" aria-labelledby="t27home">
+
+  <title id="t27home">A circle holding a house, for the place you live.</title>
+
+  <g transform="translate(-388.600, -68.320)">
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 548.89 150.32 C 548.89 193.55 513.83 228.59 470.59 228.59 C 427.35 228.59 392.29 193.55 392.29 150.32 C 392.29 107.11 427.35 72.07 470.59 72.07 C 513.83 72.07 548.89 107.11 548.89 150.32 M 543.44 150.33 C 543.44 110.11 510.82 77.51 470.59 77.51 C 430.36 77.51 397.74 110.11 397.74 150.33 C 397.74 190.54 430.36 223.14 470.59 223.14 C 510.82 223.14 543.44 190.54 543.44 150.33 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 497.72 177.6 C 497.73 181.52 494.75 184.32 490.96 184.32 L 449.82 184.29 C 446.39 184.28 443.47 181.06 443.47 177.73 L 443.47 147.54 C 443.47 143.91 446.44 141.07 450.06 141.07 L 491.56 141.11 C 494.63 141.12 497.65 144.18 497.66 147.21 Z M 480.21 161.34 L 480.19 179.52 L 491.5 179.53 C 492.23 179.35 492.77 178.77 492.92 177.98 L 492.92 147.8 C 492.92 146.91 492.22 145.87 491.23 145.87 L 449.81 145.87 C 449.09 145.87 448.26 146.63 448.26 147.3 L 448.25 177.92 C 448.48 178.71 449.08 179.31 449.8 179.53 L 460.97 179.52 L 460.97 161.31 Z M 463.68 179.53 L 477.46 179.53 L 477.46 164.06 L 463.68 164.06 Z M 463.68 179.53 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 503.45 145.3 L 470.6 112.47 L 437.87 145.17 C 436.89 146.16 435.49 145.98 434.64 145.2 C 433.73 144.37 433.47 142.87 434.52 141.82 L 468.96 107.41 C 469.94 106.43 471.34 106.54 472.29 107.48 L 506.86 142.05 C 507.74 142.93 507.36 144.38 506.64 145.11 C 505.99 145.75 504.52 146.36 503.45 145.3 "/>
+  </g>
+</svg>

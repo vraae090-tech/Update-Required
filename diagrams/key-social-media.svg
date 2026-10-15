@@ -1,0 +1,21 @@
+<!-- ============================================================
+     Lifted straight out of the book: page 39 of City Collection.
+     These are the same curves as the printed page, not a trace
+     and not a screenshot. One thing was changed and one only:
+     every colour became currentColor, so the drawing takes its
+     colour from the CSS and comes out white on the chapter
+     colour. There is no background here on purpose — the
+     section colour is meant to show through.
+     Made by pdfwork/extract_diagram.py
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64.00 64.00"
+     role="img" aria-labelledby="t39">
+
+  <title id="t39">The social media icon.</title>
+
+  <g transform="translate(-592.000, -190.000)">
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 638.21 251.12 L 609.84 251.16 C 608.11 251.16 606.51 250.7 604.89 250.19 C 599.09 247.67 594.94 242.51 594.02 236.18 L 594 207.37 C 594 198.54 600.9 191.14 609.84 191.16 L 638.87 191.21 C 646.14 191.22 653.93 199.57 653.94 206.54 L 653.97 235.34 C 653.98 243.93 646.96 251.11 638.21 251.12 M 638.78 248.61 C 645.97 248.6 651.55 242.25 651.53 235.35 L 651.46 206.17 C 651.45 200.98 644.87 193.63 638.74 193.62 L 609.82 193.59 C 602.77 193.59 596.53 199.35 596.54 206.53 L 596.57 236.14 C 596.57 241.31 603.14 248.66 609.27 248.65 Z M 638.78 248.61 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 641.05 214.39 C 640.44 223.82 631.06 232.48 622.78 237.38 C 615.02 231.91 606.82 223.92 605.79 215.09 C 605.46 212.33 606.02 209.73 607.73 207.84 C 609.47 205.91 612.2 204.76 615.13 204.96 C 618.73 205.21 621.44 207.34 623.57 210.03 C 626.21 206.55 629.83 204.82 633.88 205.45 C 638.35 206.14 641.35 209.83 641.05 214.39 M 636.76 209.34 C 633.08 206.26 627.78 207.68 624.74 212.64 C 622.45 216.38 621.65 207.56 614.5 207.39 C 610.45 207.3 607.61 210.59 608.18 214.52 C 609.16 222.68 616.21 229.39 622.93 234.54 C 631.97 229.34 643.46 214.98 636.76 209.34 "/>
+  </g>
+</svg>

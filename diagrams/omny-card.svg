@@ -1,0 +1,38 @@
+<!-- ============================================================
+     Lifted straight out of the book: page 32 of City Collection.
+     These are the same curves as the printed page, not a trace
+     and not a screenshot. One thing was changed and one only:
+     every colour became currentColor, so the drawing takes its
+     colour from the CSS and comes out white on the chapter
+     colour. There is no background here on purpose — the
+     section colour is meant to show through.
+     Made by pdfwork/extract_diagram.py
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 143.30 216.20"
+     role="img" aria-labelledby="t32">
+
+  <title id="t32">An OMNY card.</title>
+
+  <g transform="translate(-386.400, -264.800)">
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 451.09 332.49 C 451.24 333.07 451.36 333.2 451.45 332.87 L 453.85 321.89 L 458.35 321.88 L 458.35 336.42 L 455.38 336.43 L 455.39 326.55 C 455.2 326.51 455.05 326.64 454.93 326.95 L 452.82 336.37 L 449.84 336.43 L 447.24 325.73 L 447.18 336.43 L 444.17 336.42 L 444.16 321.87 L 448.66 321.83 Z M 451.09 332.49 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 473.86 336.26 C 472.84 336.6 471.82 336.42 470.72 336.39 L 465.02 326.69 L 464.91 336.38 L 461.85 336.39 L 461.84 321.89 L 464.97 321.9 L 470.64 331.55 L 470.75 321.88 L 473.84 321.88 Z M 473.86 336.26 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 439.88 333.72 C 437.43 337.31 432 337.79 429.06 334.53 C 426.26 331.42 426.46 326.43 429.35 323.46 C 431.29 321.47 434.28 321.13 436.89 322.16 C 440.98 323.77 442.64 329.64 439.88 333.72 M 437.98 330.81 C 438.49 328.23 437.85 325.37 435.72 324.52 C 434.41 323.99 432.87 324.08 431.74 325.01 C 430.14 326.34 429.91 328.77 430.29 330.75 C 430.69 332.74 432.17 334.04 434.07 334.05 C 435.93 334.07 437.55 332.95 437.98 330.81 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 484.32 331.09 C 484.26 332.92 484.18 334.71 484.09 336.46 L 481.36 336.37 L 481.23 331.11 L 476.49 321.89 L 479.77 321.89 L 482.76 328.24 L 485.56 321.9 L 488.91 321.88 Z M 484.32 331.09 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 484.09 336.46 C 484.46 334.74 483.62 332.64 484.32 331.09 L 484.34 336.27 C 484.34 336.46 484.2 336.47 484.09 336.46 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 455.39 326.55 L 454.93 326.95 C 455.02 326.55 454.97 326.13 455.3 325.75 C 455.43 326.08 455.39 326.29 455.39 326.55 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 451.45 332.87 C 451.6 333.05 451.5 333.24 451.39 333.3 C 451.28 333.36 451.01 333.31 451.04 333.07 L 451.09 332.49 Z M 451.45 332.87 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 523.72 461.42 C 523.14 468.73 517.44 474.39 510.25 474.98 L 405.78 474.99 C 401.67 474.41 398.16 472.38 395.68 469.05 C 394.09 466.91 392.43 464.24 392.43 461.32 L 392.4 284.34 C 392.95 277.08 398.69 271.35 405.94 270.79 L 510.29 270.85 C 516.52 270.86 523.67 278.59 523.68 284.39 Z M 520.07 285.19 C 519.75 279.85 514.37 274.48 509.6 274.48 L 406.62 274.44 C 401 274.75 396.11 279.2 396.1 285.02 L 396.07 389.97 L 520.06 389.97 Z M 509.64 471.34 C 515.28 470.89 519.99 466.53 520 460.81 L 520.07 392.28 L 396.07 392.28 L 396.12 460.89 C 396.12 464.36 398.67 467.12 400.98 469.22 C 402.8 470.32 404.48 471.32 406.71 471.32 Z M 509.64 471.34 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 514.55 398.52 L 401.63 398.52 C 401.44 397.78 401.45 397.12 401.64 396.47 L 514.55 396.47 Z M 514.55 398.52 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 514.55 462.33 L 401.63 462.33 C 401.44 461.59 401.45 460.93 401.64 460.28 L 514.55 460.28 Z M 514.55 462.33 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 514.55 430.43 L 401.63 430.43 C 401.44 429.68 401.45 429.02 401.64 428.38 L 514.55 428.38 Z M 514.55 430.43 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 514.55 424.04 L 401.63 424.05 C 401.44 423.3 401.45 422.64 401.64 421.99 L 514.55 421.99 Z M 514.55 424.04 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 514.55 417.66 L 401.63 417.66 C 401.44 416.92 401.45 416.26 401.64 415.61 L 514.55 415.61 Z M 514.55 417.66 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 514.55 411.28 L 401.63 411.29 C 401.44 410.54 401.45 409.88 401.64 409.23 L 514.55 409.23 Z M 514.55 411.28 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 514.55 404.9 L 401.63 404.9 C 401.44 404.16 401.45 403.5 401.64 402.85 L 514.55 402.85 Z M 514.55 404.9 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 514.55 443.19 L 401.63 443.19 C 401.44 442.45 401.45 441.79 401.64 441.14 L 514.55 441.14 Z M 514.55 443.19 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 514.55 449.57 L 401.63 449.57 C 401.44 448.82 401.45 448.16 401.64 447.52 L 514.55 447.52 Z M 514.55 449.57 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 514.55 455.95 L 401.63 455.95 C 401.44 455.21 401.45 454.55 401.64 453.9 L 514.55 453.9 Z M 514.55 455.95 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 514.55 436.8 L 401.63 436.81 C 401.44 436.06 401.45 435.4 401.64 434.75 L 514.55 434.75 Z M 514.55 436.8 "/>
+  </g>
+</svg>

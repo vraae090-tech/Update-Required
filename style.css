@@ -1,0 +1,1962 @@
+:root {
+  --orange: #FF7E00;
+  --rust:   #9A4016;
+  --burnt:  #C2560D;
+  --teal:   #5EA592;
+  --ink:    #231F20;
+  --paper:  #FFFFFF;
+  --rule:   #D8D4D0;
+  --sec-00: var(--ink);
+  --sec-01: var(--orange);
+  --sec-02: var(--burnt);
+  --sec-03: var(--rust);
+  --sec-04: var(--teal);
+  --sec: var(--ink);
+  --grey: #5C5651;
+  --mono: 'Geist Mono', 'IBM Plex Mono', monospace;
+  --sans: 'Public Sans', system-ui, sans-serif;
+  --tab-w: 62px;
+  --gutter: 48px;
+  --sp-1: 0.75rem;
+  --sp-2: 1.25rem;
+  --sp-3: 2.25rem;
+  --sp-4: 3.5rem;
+  --sp-5: 4.5rem;
+  --bar-w: 4px;
+  --bar-gap: 22px;
+  --t-mini: 0.9375rem;
+  --step-indent: 56px;
+  /* the reader's text-size setting as a multiplier, for type sized in vw that
+     would otherwise ignore it. The size card overwrites this; the default
+     keeps the page correct when the script never runs. */
+  --type-scale: 1;
+}
+
+html {
+  font-size: 100%;
+}
+
+body[data-sec="00"] {
+  --sec: var(--sec-00); --on-sec: var(--paper);
+}
+
+body[data-sec="01"] {
+  --sec: var(--sec-01); --on-sec: var(--ink);
+}
+
+body[data-sec="02"] {
+  --sec: var(--sec-02); --on-sec: var(--paper);
+}
+
+body[data-sec="03"] {
+  --sec: var(--sec-03); --on-sec: var(--paper);
+}
+
+body[data-sec="04"] {
+  --sec: var(--sec-04); --on-sec: var(--ink);
+}
+
+body {
+  --sec-ink: var(--sec);
+  --box-ink: inherit;
+}
+
+.chapter[data-sec="02"],
+.chapter[data-sec="03"] {
+  --box-ink: var(--sec);
+}
+
+body.is-dark.chapter[data-sec="02"],
+body.is-dark.chapter[data-sec="03"] {
+  --box-ink: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+  text-wrap: pretty;
+}
+
+.book {
+  display: flex;
+  min-height: 100vh;
+}
+
+.page {
+  flex: 1;
+  min-width: 0;
+  background: var(--paper);
+  padding: var(--gutter);
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  flex-shrink: 0;
+  align-self: flex-start;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.tab {
+  width: var(--tab-w);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* Top gap matches the gap either side of the caps, so the type sits with an
+     even margin in the bar. 0.7em is the Public Sans cap height, so this keeps
+     tracking the type as it scales rather than drifting at other sizes. */
+  padding: calc((var(--tab-w) - 0.7em) / 2) 0 0;
+  writing-mode: vertical-rl;
+  font-family: var(--sans);
+  /* Spine type, sized to fill the bar like the book. Tied to viewport height
+     because the longest label ("HOW TO GET THERE?" runs about 11.5em) has to
+     clear the bar top to bottom; the cap stops it growing on tall screens. */
+  font-size: clamp(1.625rem, 6.5vh, 3.25rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--paper);
+}
+
+/* Trim the unused ascender/descender slack so the caps sit optically centred
+   across the bar instead of riding to one side. */
+@supports (text-box: trim-both cap alphabetic) {
+  .tab {
+    text-box: trim-both cap alphabetic;
+  }
+}
+
+.tab--setup {
+  background: var(--sec-01);
+  color: var(--paper);
+}
+
+.tab--getin {
+  background: var(--sec-02);
+  color: var(--paper);
+}
+
+.tab--getthere {
+  background: var(--sec-03);
+  color: var(--paper);
+}
+
+.tab--error {
+  background: var(--sec-04);
+  color: var(--paper);
+}
+
+.tab[aria-current]::after {
+  content: "";
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  margin-top: 14px;
+}
+
+.tab:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: -6px;
+}
+
+/* ---------- landing ---------- */
+
+/* the landing page carries its own gutter on .landing-sheet so the
+   cover can run full bleed to the edge of the page column */
+.page--landing {
+  padding: 0;
+}
+
+/* flex-basis must stay auto: the landing is two screens tall, and a 0 basis
+   would collapse it to one and leave the sticky stage no range to travel */
+.landing {
+  flex: 1 0 auto;
+  display: block;
+  padding: 0;
+}
+
+.landing-stage {
+  position: relative;
+}
+
+/* ---------- cover ---------- */
+
+.cover {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  background: var(--ink);
+}
+
+.cover-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* biased upward so the alarm bell stays in frame on wide screens */
+  object-position: center 28%;
+  display: block;
+}
+
+/* scrim: keeps the title legible over the light stucco */
+.cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(35, 31, 32, 0.74) 0%,
+    rgba(35, 31, 32, 0.34) 34%,
+    rgba(35, 31, 32, 0) 62%,
+    /* and back up again at the very top: the stucco runs pale up there, so
+       the wordmark needs something under it. Weak enough to read as the
+       photograph's own shading rather than a band laid over it. */
+    rgba(35, 31, 32, 0) 68%,
+    rgba(35, 31, 32, 0.6) 100%
+  );
+  pointer-events: none;
+}
+
+.cover-title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: var(--gutter);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-size: clamp(3rem, 10.5vw, 9rem);
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}
+
+/* "required" italic, like the book. The italic axis is now in the font
+   request, so this is the real cut rather than a browser-slanted roman.
+   The slant leans into the right sidebearing, so the negative tracking
+   comes off to stop the last letter crowding. */
+.cover-title em {
+  font-style: italic;
+  letter-spacing: 0;
+}
+
+/* ---------- sheet (large type on white) ---------- */
+
+.landing-sheet {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: var(--paper);
+  padding: var(--gutter);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Set in caps. The tight tracking below was drawn for the lowercase, and caps
+   sit on a wider body, so a little is given back to stop the letters touching. */
+.landing-mark {
+  margin: 0;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.landing-mark a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* The same wordmark the sheet carries, held on the cover in the identical
+   spot, so scrolling trades white for black on one line instead of moving it.
+   The sheet insets its contents by the gutter; this is positioned against a
+   box with the same four edges, so the two land on top of each other. It is
+   hidden from screen readers because the sheet's copy is the real one and
+   both are in the page at once. */
+.landing-mark--cover {
+  position: absolute;
+  top: var(--gutter);
+  left: var(--gutter);
+  z-index: 1;
+  color: var(--paper);
+}
+
+/* This line is sized off the window width so it fills the slab, and a width
+   takes no notice of the reader's text-size setting — which is why the + button
+   appeared to do nothing here. --type-scale carries that setting across as a
+   plain number so the width can be multiplied by it.
+
+   The ceiling is the catch. The sheet is exactly one screen tall and cannot
+   scroll, so type that grows without limit is type that gets cut off at the
+   bottom. The second term is the largest this can be and still fit: the screen,
+   less the fixed furniture above and below it, divided over the six lines the
+   18ch measure always breaks into. So it grows until it fills the screen and
+   then holds, rather than growing until it disappears. */
+.landing-say {
+  margin: 0;
+  padding: 40px 0 0;
+  font-size: clamp(
+    2.5rem,
+    calc(6.6vw * var(--type-scale, 1)),
+    min(7rem, calc((100vh - 175px) / 5.5))
+  );
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+  text-align: left;
+  max-width: 18ch;
+}
+
+.landing-run {
+  display: none;
+}
+
+/* ---------- scroll-driven crossfade (JS present) ---------- */
+
+html.cover-js .landing-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+html.cover-js .cover,
+html.cover-js .landing-sheet {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+}
+
+html.cover-js .cover.is-gone {
+  visibility: hidden;
+}
+
+html.cover-js .landing-run {
+  display: block;
+  height: 100vh;
+  height: 100svh;
+}
+
+.helpers {
+  position: fixed;
+  right: 32px;
+  bottom: 16px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.card {
+  position: static;
+  background: #FFFFFF;
+  border: 1.5px solid var(--sec);
+  border-radius: 8px;
+  padding: 12px 14px;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card button {
+  cursor: pointer;
+  user-select: auto;
+}
+
+.card.dragging {
+  opacity: 0.9;
+}
+
+.card .card-note {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  margin: 0 0 9px;
+  color: var(--ink);
+}
+
+.textsize-card {
+  width: fit-content;
+}
+
+.textsize-card .card-note {
+  max-width: 19ch;
+}
+
+.textsize-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.size-btn {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border: 1.5px solid var(--ink);
+  border-radius: 6px;
+  background: var(--sec);
+  color: var(--on-sec);
+  font-family: var(--sans);
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.size-btn:hover {
+  filter: brightness(1.06);
+}
+
+.size-btn:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.size-btn[disabled] {
+  background: var(--rule);
+  color: var(--grey);
+  cursor: default;
+}
+
+.size-now {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  min-width: 5ch;
+  text-align: center;
+}
+
+.size-reset {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: none;
+  border: 0;
+  padding: 4px 2px;
+  margin-top: 6px;
+  color: var(--grey);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.print-card {
+  width: 250px;
+}
+
+.print-card .card-note {
+  max-width: none;
+}
+
+.print-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-align: left;
+}
+
+.print-toggle:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.print-toggle .chev {
+  transition: transform 0.15s;
+}
+
+.print-toggle[aria-expanded="true"] .chev {
+  transform: rotate(90deg);
+}
+
+.print-steps {
+  margin: 10px 0 0;
+  padding: 0 0 0 20px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.print-steps li + li {
+  margin-top: 7px;
+}
+
+.print-now {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 12px;
+  border: 1.5px solid var(--ink);
+  border-radius: 6px;
+  background: var(--sec);
+  color: var(--on-sec);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.print-now:hover {
+  filter: brightness(1.06);
+}
+
+.print-now:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+body[data-sec="01"] {
+  --tabs-after: 3;
+}
+
+body[data-sec="02"] {
+  --tabs-after: 2;
+}
+
+body[data-sec="03"] {
+  --tabs-after: 1;
+}
+
+body[data-sec="04"] {
+  --tabs-after: 0;
+}
+
+body[data-sec="02"] .tab--setup,
+body[data-sec="03"] .tab--setup,
+body[data-sec="03"] .tab--getin,
+body[data-sec="04"] .tab--setup,
+body[data-sec="04"] .tab--getin,
+body[data-sec="04"] .tab--getthere {
+  display: none;
+}
+
+.chapter {
+  --art-w: calc(50vw - (var(--tabs-after) + 1) * var(--tab-w) - var(--gutter) * 2);
+  --fig-h: calc(100vh - var(--gutter) * 2 - 4.5rem);
+  --phone-tall: min(var(--fig-h), calc(var(--art-w) * 1.757));
+  --dia-w: 79%;
+  --photo-sq: min(var(--fig-h), calc(50vw - 4 * var(--tab-w) - var(--gutter) * 2));
+  background: var(--paper);
+}
+
+.colour-field {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50vw;
+  right: calc((var(--tabs-after) + 1) * var(--tab-w));
+  background: var(--sec);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.chapter .page {
+  background: transparent;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.run {
+  display: grid;
+  grid-template-columns: 50vw 1fr;
+  align-items: start;
+}
+
+.words {
+  grid-column: 1;
+  padding: 0 calc(var(--gutter) * 1.4) 0 var(--gutter);
+}
+
+.words h2.label {
+  margin: var(--sp-4) 0 0;
+}
+
+.words h2.label + * {
+  margin-top: var(--sp-2);
+}
+
+.words h3 + * {
+  margin-top: var(--sp-1);
+}
+
+.chapter .words > :first-child {
+  margin-top: 0;
+}
+
+.words > * {
+  max-width: 34em;
+}
+
+.art {
+  position: fixed;
+  left: 50vw;
+  right: calc((var(--tabs-after) + 1) * var(--tab-w));
+  top: var(--gutter);
+  bottom: var(--gutter);
+  padding: 0 var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.js-art .art {
+  opacity: 0;
+}
+
+.js-art .run.is-current .art {
+  opacity: 1;
+}
+
+.art .diagram img,
+.art .diagram svg {
+  display: block;
+  max-width: 100%;
+  max-height: var(--fig-h);
+  width: var(--dia-w);
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  mix-blend-mode: normal;
+}
+
+/* The shared 79% suits the tall drawings, which run out of height before they
+   run out of width. A wide, short one like the sign-in box hits neither, so at
+   79% it sits about a third of the panel height while the tall ones fill two
+   thirds, and reads as a mistake. Running it to the full width is as large as
+   it can go without overflowing the gutter, which brings it back to weight. */
+.art .diagram--wide img,
+.art .diagram--wide svg {
+  width: 100%;
+}
+
+.art .diagram--phone.diagram--literal img {
+  height: var(--phone-tall);
+  width: auto;
+  max-width: none;
+  max-height: none;
+}
+
+.art .diagram--phone img {
+  height: calc(var(--phone-tall) / 1.111);
+  width: auto;
+  max-width: none;
+  max-height: none;
+}
+
+.art .photo-pair {
+  display: flex;
+  gap: 20px;
+  align-items: start;
+  width: 100%;
+}
+
+.art .photo-pair .photo {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.art .photo-pair .photo img {
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 16rem);
+  object-fit: contain;
+}
+
+.art .diagram-stack {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--sp-3);
+  width: 100%;
+  height: 100%;
+  max-height: var(--fig-h);
+}
+
+.art .diagram-stack .diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  margin: 0;
+}
+
+.art .diagram-stack .diagram img {
+  flex: 0 1 auto;
+  min-height: 0;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 2388 / 2793;
+  object-fit: contain;
+}
+
+.art .diagram-stack .diagram figcaption {
+  flex: 0 0 auto;
+  margin-top: 10px;
+}
+
+.art .diagram--literal img {
+  filter: none;
+}
+
+.art .photo img {
+  display: block;
+  max-width: 100%;
+  max-height: var(--fig-h);
+  width: auto;
+  height: auto;
+  filter: none;
+}
+
+.art .photo--square img {
+  width: var(--photo-sq);
+  height: var(--photo-sq);
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin-inline: auto;
+}
+
+.art figure {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Captions run no wider than the picture above them, so a caption that spills
+   onto a second line breaks on the image's edge rather than past it. One that
+   fits on a single line just sits centred underneath, exactly as before.
+
+   The figure itself is deliberately left at full width. Shrink-wrapping it to
+   the image resizes the drawings, because most of them are sized with a
+   percentage that would then be measuring a box the image was itself
+   defining. So the caps below repeat the values the images are set with
+   instead, which keeps the two tracking each other at every screen size. */
+.art > figure.diagram > figcaption {
+  max-width: var(--dia-w);
+  margin-inline: auto;
+}
+
+/* the wide one runs the full width, so its caption does too */
+.art > figure.diagram--wide > figcaption {
+  max-width: none;
+}
+
+/* the phones are sized by height, so their width comes back out of the
+   drawing's own proportion (they run between 0.477 and 0.485 wide) */
+.art > figure.diagram--phone > figcaption {
+  max-width: calc(var(--phone-tall) / 1.111 * 0.485);
+}
+
+.art > figure.diagram--literal > figcaption {
+  max-width: calc(var(--phone-tall) * 0.569);
+}
+
+.art > figure.photo--square > figcaption {
+  max-width: var(--photo-sq);
+  margin-inline: auto;
+}
+
+/* The upright photographs are the one case where the picture's width was not
+   written down anywhere: they are set to fit inside the panel, so whichever
+   runs out first — the width of the column or the height of the screen —
+   decides how big they come out. That left them running the full width of the
+   panel with a caption a third of that underneath, which is the mismatch.
+
+   So the same fit is written out once as a value both can use. --photo-ar is
+   the photograph's own proportion, declared on the figure because it belongs
+   to the file rather than to the layout; the height limit times that ratio is
+   how wide the picture would be if height were the binding constraint, and
+   min() picks whichever of the two actually binds. The image is then set to
+   that instead of being left to work it out, so the caption can be set to the
+   identical value and the two always agree. */
+.art > figure.photo:not(.photo--square) > img {
+  width: min(100%, calc(var(--fig-h) * var(--photo-ar)));
+  height: auto;
+  margin-inline: auto;
+}
+
+.art > figure.photo:not(.photo--square) > figcaption {
+  max-width: min(100%, calc(var(--fig-h) * var(--photo-ar)));
+  margin-inline: auto;
+  /* Balanced wrapping evens the lines out by pulling them all in from the
+     edges, which on these long captions quietly undoes the alignment the
+     width above just bought. These are the only captions long enough for
+     that to show, so they fill the measure and let the edges line up with
+     the photograph; the rest of the captions keep the balanced setting. */
+  text-wrap: pretty;
+}
+
+/* the pair and the icon plate already run their images to the full width of
+   the figure, so their captions only need the character cap taken off */
+.art .photo-pair .photo > figcaption,
+.art .icon-plate figure > figcaption {
+  max-width: none;
+}
+
+.art figure img,
+.art figure svg {
+  margin-inline: auto;
+}
+
+.chapter .art figcaption {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--paper);
+  margin-top: 16px;
+  margin-inline: auto;
+  max-width: 34ch;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.run.is-current .art figure[data-tip] {
+  pointer-events: auto;
+}
+
+.words .label {
+  display: block;
+  font-family: var(--mono);
+  font-size: var(--t-mini);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sec-ink);
+  margin: 0 0 1.125rem;
+  text-wrap: balance;
+}
+
+.words h3 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 700;
+  color: var(--sec-ink);
+  margin: var(--sp-3) 0 0;
+  max-width: 24ch;
+  text-wrap: balance;
+}
+
+.words h3:first-child {
+  margin-top: 0;
+}
+
+.words .steps > li > strong:first-child,
+.words .parts > li > span > strong:first-child {
+  color: var(--sec-ink);
+}
+
+.run + .run {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.run:not(:last-of-type) {
+  padding-bottom: var(--sp-5);
+}
+
+.run:has(img) {
+  min-height: 26vh;
+}
+
+.run:last-of-type .words {
+  padding-bottom: var(--gutter);
+}
+
+.home-link {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  margin: 0;
+  padding: var(--gutter) var(--gutter) 0;
+}
+
+.home-link a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.home-link a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.home-link a:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.chapter-head {
+  width: 50vw;
+  padding: 26px calc(var(--gutter) * 1.4) 0 var(--gutter);
+  margin-bottom: 52px;
+}
+
+.chapter-head .chapter-name {
+  font-size: 3.5rem;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-weight: 900;
+  margin: 0 0 24px;
+  max-width: 14ch;
+  text-wrap: balance;
+}
+
+.chapter-head .chapter-title {
+  font-size: 1.5rem;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+  margin: 0 0 20px;
+  max-width: 30ch;
+  text-wrap: balance;
+}
+
+.chapter-head .byline {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--grey);
+  margin: 0;
+}
+
+.prose p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 62ch;
+  margin: 0;
+}
+
+.prose p + p {
+  margin-top: var(--sp-2);
+}
+
+.prose {
+  margin: var(--sp-3) 0 0;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  margin: var(--sp-3) 0 0;
+  text-wrap: balance;
+}
+
+.prose a {
+  color: var(--sec-ink);
+  text-underline-offset: 2px;
+}
+
+.diagram {
+  margin: 0;
+}
+
+.diagram img,
+.diagram svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.diagram figcaption {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin-top: 18px;
+  max-width: 48ch;
+  color: var(--on-sec);
+}
+
+.steps {
+  list-style: none;
+  counter-reset: step;
+  margin: var(--sp-3) 0 0;
+  padding: 0;
+}
+
+.steps--from2 {
+  counter-reset: step 1;
+}
+
+.steps--from3 {
+  counter-reset: step 2;
+}
+
+.steps--from4 {
+  counter-reset: step 3;
+}
+
+.steps--from6 {
+  counter-reset: step 5;
+}
+
+.steps--from8 {
+  counter-reset: step 7;
+}
+
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 0 0 0 var(--step-indent);
+  font-size: 1.125rem;
+  line-height: 1.55;
+  max-width: 54ch;
+}
+
+.steps li + li {
+  margin-top: var(--sp-2);
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  background: var(--sec);
+  font-family: var(--mono);
+  font-size: 1rem;
+}
+
+/* Section 03's rust is the darkest of the four, and the ink numeral all but
+   vanishes into it (2.4:1). White lifts it to 6.7:1, clearing AA.
+   Set literally rather than via var(--paper), which flips to near-black
+   inside .words in dark mode. */
+body[data-sec="03"] .steps li::before {
+  color: #FFFFFF;
+}
+
+.jargon {
+  background: var(--paper);
+  border: var(--bar-w) solid var(--sec);
+  border-radius: 8px;
+  margin: var(--sp-4) 0 0;
+  padding: 24px 26px;
+}
+
+.jargon .label {
+  display: block;
+  font-family: var(--mono);
+  font-size: var(--t-mini);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.625rem;
+  text-wrap: balance;
+}
+
+.jargon dl {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.jargon dt {
+  font-weight: 700;
+}
+
+.jargon dd {
+  margin: 2px 0 12px;
+}
+
+.jargon dd:last-child {
+  margin-bottom: 0;
+}
+
+.note {
+  border-left: var(--bar-w) solid var(--sec);
+  padding: 2px 0 2px var(--bar-gap);
+  margin: var(--sp-3) 0 0;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  max-width: 50ch;
+  color: var(--box-ink);
+}
+
+.note--quote {
+  font-size: 1.5rem;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  max-width: 32ch;
+  border-left: none;
+  padding-left: var(--step-indent);
+  color: var(--sec-ink);
+  font-weight: 700;
+  margin: var(--sp-3) 0 0;
+  text-wrap: balance;
+}
+
+.note .who {
+  display: block;
+  font-family: var(--mono);
+  font-size: var(--t-mini);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sec-ink);
+  margin-bottom: 0.375rem;
+}
+
+.try {
+  border-left: var(--bar-w) solid var(--sec);
+  padding: 4px 0 4px var(--bar-gap);
+  margin: var(--sp-4) 0 0;
+}
+
+.try .label {
+  display: block;
+  font-family: var(--mono);
+  font-size: var(--t-mini);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sec-ink);
+  margin-bottom: 0.625rem;
+  text-wrap: balance;
+}
+
+.try p {
+  font-size: 1.125rem;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 54ch;
+  color: var(--box-ink);
+}
+
+.mode-switch,
+.view-switch {
+  display: flex;
+  gap: 10px;
+  margin-top: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.mode-btn,
+.view-btn,
+.quiz-btn,
+.quiz-next {
+  min-height: 60px;
+  padding: 0 28px;
+  border: 1.5px solid var(--ink);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.9375rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.mode-btn.is-on,
+.view-btn.is-on,
+.quiz-btn.is-right {
+  background: var(--sec);
+  color: var(--on-sec);
+}
+
+.mode-btn:hover,
+.view-btn:hover,
+.quiz-btn:not([disabled]):hover,
+.quiz-next:hover {
+  filter: brightness(1.06);
+}
+
+.mode-btn:focus-visible,
+.view-btn:focus-visible,
+.quiz-btn:focus-visible,
+.quiz-next:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+body.chapter.is-dark {
+  background: var(--ink);
+}
+
+body.chapter {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body.is-dark .words,
+body.is-dark .chapter-head,
+body.is-dark .home-link {
+  --paper: #231F20;
+  --ink:   #FFFFFF;
+  color: var(--ink);
+  background: var(--paper);
+  --grey:  #B2B1B1;
+  --rule:  #4B4748;
+}
+
+.bullets {
+  list-style: none;
+  margin: var(--sp-3) 0 0;
+  padding: 0;
+  max-width: 58ch;
+}
+
+.bullets li {
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
+.bullets li + li {
+  margin-top: var(--sp-2);
+}
+
+.myths {
+  list-style: none;
+  counter-reset: myth;
+  margin: var(--sp-3) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--sp-2);
+}
+
+.myths > li {
+  counter-increment: myth;
+  border: var(--bar-w) solid var(--sec);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.myths .myth,
+.myths .reality {
+  padding: 24px 26px;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.myths .myth {
+  border-bottom: var(--bar-w) solid var(--sec);
+}
+
+.myths .myth::before {
+  content: counter(myth);
+  display: block;
+  font-family: var(--mono);
+  font-size: 1.375rem;
+  font-weight: 500;
+  color: var(--sec-ink);
+  margin-bottom: var(--sp-1);
+}
+
+.myths .verdict {
+  display: block;
+  margin-top: var(--sp-1);
+  font-family: var(--mono);
+  font-size: var(--t-mini);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sec-ink);
+}
+
+.phrases {
+  list-style: none;
+  margin: var(--sp-3) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: var(--sp-1);
+}
+
+.phrases li {
+  font-family: var(--mono);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  word-break: break-all;
+  padding: var(--sp-2) 16px;
+  border: var(--bar-w) solid var(--sec);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--box-ink);
+}
+
+.phrases--small li {
+  font-size: 1.125rem;
+  padding: var(--sp-1) 16px;
+}
+
+.photo {
+  margin: 0;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.photo figcaption {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--grey);
+  margin-top: 10px;
+  max-width: 46ch;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--sp-3);
+  margin: var(--sp-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-1);
+}
+
+.icon-card .icon-name {
+  font-family: var(--mono);
+  font-size: var(--t-mini);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  color: var(--sec-ink);
+}
+
+.icon-card p {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
+.art .icon-plate {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  max-height: var(--fig-h);
+  gap: var(--sp-4) var(--sp-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.art .icon-plate.icon-plate--two {
+  grid-template-rows: 1fr;
+}
+
+.art .icon-plate.icon-plate--three {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.art .icon-plate.icon-plate--three figure img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+.art .icon-plate.icon-plate--six {
+  grid-template-rows: repeat(3, 1fr);
+  gap: var(--sp-3);
+}
+
+.art .icon-plate.icon-plate--six figure img {
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.art .icon-plate li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+}
+
+.art .icon-plate figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+}
+
+.art .icon-plate figure img {
+  flex: 0 1 auto;
+  min-height: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 10;
+}
+
+.art .icon-plate figcaption {
+  flex: 0 0 auto;
+  margin-top: 10px;
+}
+
+.art .icon-plate img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.parts {
+  list-style: none;
+  margin: var(--sp-3) 0 0;
+  padding: 0;
+}
+
+.parts li {
+  display: flex;
+  gap: 18px;
+  padding: 0;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  max-width: 58ch;
+}
+
+.parts li + li {
+  margin-top: var(--sp-2);
+}
+
+.parts .n {
+  font-family: var(--mono);
+  font-size: var(--t-mini);
+  color: var(--sec-ink);
+  flex-shrink: 0;
+  width: 2.5ch;
+  padding-top: 3px;
+}
+
+.pw-try {
+  margin-top: var(--sp-2);
+}
+
+.pw-try label {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: var(--sp-1);
+}
+
+.pw-try input {
+  width: 100%;
+  max-width: 34ch;
+  padding: var(--sp-1);
+  font-family: var(--mono);
+  font-size: 1.125rem;
+  border: var(--bar-w) solid var(--ink);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.pw-try input:focus-visible {
+  outline: 3px solid var(--sec);
+  outline-offset: 2px;
+}
+
+.pw-checks {
+  list-style: none;
+  margin: var(--sp-2) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-1);
+}
+
+.pw-checks li {
+  display: flex;
+  gap: var(--sp-1);
+  align-items: baseline;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  color: var(--grey);
+}
+
+.pw-checks li .mark {
+  font-family: var(--mono);
+  flex-shrink: 0;
+  width: 1.5ch;
+  color: var(--grey);
+}
+
+.pw-checks li.pass {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.pw-checks li.pass .mark {
+  color: var(--sec-ink);
+}
+
+.pw-verdict,
+.view-says,
+.quiz-says {
+  margin: var(--sp-2) 0 0;
+  padding: var(--sp-1) 0;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  min-height: 1.6em;
+}
+
+.pw-privacy {
+  margin: var(--sp-1) 0 0;
+  font-family: var(--mono);
+  font-size: var(--t-mini);
+  line-height: 1.5;
+  color: var(--grey);
+  max-width: 54ch;
+}
+
+.quiz {
+  margin-top: var(--sp-2);
+}
+
+p.quiz-count {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: var(--t-mini);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.quiz-qs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p.quiz-ask {
+  margin: var(--sp-1) 0 0;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 54ch;
+}
+
+.quiz-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: var(--sp-2);
+}
+
+.quiz-btn[disabled] {
+  cursor: default;
+}
+
+.quiz-btn.is-wrong {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+p.quiz-why {
+  margin: var(--sp-2) 0 0;
+  border-left: var(--bar-w) solid var(--sec);
+  padding: 2px 0 2px var(--bar-gap);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  max-width: 54ch;
+  color: var(--box-ink);
+}
+
+.quiz-next {
+  margin-top: var(--sp-2);
+}
+
+p.quiz-score {
+  margin: var(--sp-2) 0 0;
+  font-family: var(--mono);
+  font-size: var(--t-mini);
+  line-height: 1.5;
+  color: var(--grey);
+  max-width: 54ch;
+  min-height: 1.5em;
+}
+
+p.quiz-says:empty,
+p.quiz-score:empty {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+
+/* The six cards sat 8px under the paragraph that introduces them, which is
+   less air than the paragraphs give each other, so the block read as a
+   continuation of the sentence rather than the thing the sentence points at.
+   --sp-3 is the step the prose itself takes from what comes before it: wider
+   than the gap between two paragraphs, narrower than the break before the
+   next block. It is measured in rem as well, so it opens up with the rest of
+   the page when the reader asks for larger text — the old 8px did not. */
+.scam-grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: var(--sp-3) 0 0;
+}
+
+.scam {
+  border: var(--bar-w) solid var(--sec);
+  border-radius: 10px;
+  background: var(--paper);
+  padding: 16px 18px;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+.scam:hover {
+  box-shadow: inset 0 0 0 2px var(--sec);
+}
+
+.scam:focus-visible {
+  outline: 3px solid var(--sec);
+  outline-offset: 2px;
+}
+
+.scam .from {
+  font-family: var(--mono);
+  font-size: var(--t-mini);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sec-ink);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.scam .says {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0 0 12px;
+}
+
+.scam .reveal-cue {
+  display: block;
+  font-family: var(--mono);
+  font-size: var(--t-mini);
+  color: var(--grey);
+}
+
+.scam .tell:not([hidden]) {
+  display: block;
+}
+
+.scam .tell {
+  margin: 0;
+  padding-top: 12px;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.scam[aria-expanded="true"] {
+  box-shadow: inset 0 0 0 2px var(--sec);
+}
+
+.scam[aria-expanded="true"] .reveal-cue {
+  display: none;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 60;
+  left: 0;
+  top: 0;
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.005em;
+  max-width: 24ch;
+  padding: 9px 13px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 7px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity 0.14s ease, transform 0.14s ease;
+}
+
+.tooltip.is-on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  border: 6px solid transparent;
+}
+
+.tooltip.tip--above::after {
+  bottom: -12px;
+  left: 50%;
+  margin-left: -6px;
+  border-top-color: var(--ink);
+}
+
+.tooltip.tip--left::after {
+  right: -12px;
+  top: 50%;
+  margin-top: -6px;
+  border-left-color: var(--ink);
+}
+
+.tooltip.tip--below::after {
+  top: -12px;
+  left: 50%;
+  margin-left: -6px;
+  border-bottom-color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tooltip {
+    transition: none;
+    transform: none;
+  }
+
+  .tooltip.is-on {
+    transform: none;
+  }
+}
+
+@media print {
+  .tooltip {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .landing-say {
+    max-width: 22ch;
+    padding-top: 28px;
+  }
+
+  .page {
+    padding: 30px;
+  }
+
+  /* the landing keeps its gutter on the sheet, not the page column */
+  .page--landing {
+    padding: 0;
+  }
+
+  .landing-sheet,
+  .cover-title {
+    padding: 30px;
+  }
+
+  /* the sheet's inset drops to 30, so the cover's copy has to follow it down
+     or the two stop sitting on the same line */
+  .landing-mark--cover {
+    top: 30px;
+    left: 30px;
+  }
+
+  .words {
+    padding: 0 30px 70px 30px;
+  }
+
+  .art {
+    padding: 22px;
+    top: 22px;
+  }
+
+  .chapter-head {
+    padding: 22px 30px 0 30px;
+  }
+
+  .chapter-head .chapter-name {
+    font-size: 2.75rem;
+  }
+
+  .home-link {
+    padding: 30px 30px 0;
+  }
+}
+
+@media print {
+  body {
+    padding: 0;
+    background: var(--paper);
+  }
+
+  body.is-dark {
+    background: var(--paper);
+  }
+
+  body.is-dark .words,
+  body.is-dark .chapter-head,
+  body.is-dark .home-link {
+    --paper: #FFFFFF;
+    --ink:   #231F20;
+    --grey:  #5C5651;
+    --rule:  #D8D4D0;
+  }
+
+  .mode-switch,
+  .view-switch,
+  .view-says {
+    display: none;
+  }
+
+  .book {
+    border: 0;
+    border-radius: 0;
+    min-height: 0;
+    display: block;
+  }
+
+  .page {
+    padding: 0;
+    display: block;
+  }
+
+  /* the landing prints as the plain white page, not the photographic cover */
+  html.cover-js .landing-stage {
+    position: static;
+    height: auto;
+    overflow: visible;
+  }
+
+  html.cover-js .landing-sheet {
+    position: static;
+    inset: auto;
+    min-height: 0;
+    padding: 0;
+    opacity: 1 !important;
+  }
+
+  .cover,
+  .landing-run {
+    display: none !important;
+  }
+
+  .tabs,
+  .helpers,
+  .home-link,
+  .colour-field {
+    display: none;
+  }
+
+  .run {
+    display: block;
+    break-inside: auto;
+  }
+
+  .words,
+  .art {
+    position: static;
+    max-height: none;
+    padding: 0;
+  }
+
+  .art {
+    margin: 24px 0 40px;
+  }
+
+  .chapter-head {
+    width: auto;
+    padding: 0;
+  }
+
+  .art .diagram img,
+  .art .diagram svg,
+  .diagram img,
+  .diagram svg {
+    filter: none;
+    max-width: 100%;
+    max-height: none;
+  }
+
+  .chapter .art figcaption,
+  .art figcaption,
+  .diagram figcaption {
+    color: #000;
+  }
+
+  .prose a::after {
+    content: " (" attr(href) ")";
+    font-family: var(--mono);
+    font-size: 0.75rem;
+  }
+
+  .diagram,
+  .steps li,
+  .jargon,
+  .try {
+    break-inside: avoid;
+  }
+}

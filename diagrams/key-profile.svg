@@ -1,0 +1,22 @@
+<!-- ============================================================
+     Lifted straight out of the book: page 39 of City Collection.
+     These are the same curves as the printed page, not a trace
+     and not a screenshot. One thing was changed and one only:
+     every colour became currentColor, so the drawing takes its
+     colour from the CSS and comes out white on the chapter
+     colour. There is no background here on purpose — the
+     section colour is meant to show through.
+     Made by pdfwork/extract_diagram.py
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64.00 64.00"
+     role="img" aria-labelledby="t39">
+
+  <title id="t39">The profile icon.</title>
+
+  <g transform="translate(-592.000, -262.000)">
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 638.21 323.96 L 609.84 324 C 608.11 324 606.51 323.54 604.89 323.03 C 599.09 320.51 594.94 315.35 594.02 309.02 L 594 280.21 C 594 271.38 600.9 263.98 609.84 264 L 638.87 264.05 C 646.14 264.06 653.93 272.41 653.94 279.38 L 653.97 308.18 C 653.98 316.77 646.96 323.95 638.21 323.96 M 638.78 321.45 C 645.97 321.44 651.55 315.09 651.53 308.19 L 651.46 279.01 C 651.45 273.82 644.87 266.47 638.74 266.46 L 609.82 266.43 C 602.77 266.43 596.53 272.19 596.54 279.38 L 596.57 308.99 C 596.57 314.15 603.14 321.5 609.27 321.49 Z M 638.78 321.45 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 639.14 313.49 L 608.84 313.49 C 608.72 309.39 609.2 305.33 611.11 301.78 C 614.56 295.41 622.41 293.69 629.05 295.57 C 632.6 296.58 635.42 298.92 637.08 302.19 C 638.12 304.25 638.66 306.4 638.96 308.69 Z M 627.04 296.17 L 620.93 296.15 L 623.99 303.55 Z M 627.04 296.17 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 633.51 284.03 C 633.51 289.29 629.25 293.54 623.99 293.54 C 618.73 293.54 614.47 289.29 614.47 284.03 C 614.47 278.77 618.73 274.51 623.99 274.51 C 629.25 274.51 633.51 278.77 633.51 284.03 M 631.8 284.03 C 631.8 279.71 628.3 276.21 623.99 276.21 C 619.68 276.21 616.18 279.71 616.18 284.03 C 616.18 288.34 619.68 291.84 623.99 291.84 C 628.3 291.84 631.8 288.34 631.8 284.03 "/>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<!-- ============================================================
+     Lifted straight out of the book: page 39 of City Collection.
+     These are the same curves as the printed page, not a trace
+     and not a screenshot. One thing was changed and one only:
+     every colour became currentColor, so the drawing takes its
+     colour from the CSS and comes out white on the chapter
+     colour. There is no background here on purpose — the
+     section colour is meant to show through.
+     Made by pdfwork/extract_diagram.py
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64.00 64.00"
+     role="img" aria-labelledby="t39">
+
+  <title id="t39">The text message icon.</title>
+
+  <g transform="translate(-430.000, -262.000)">
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 476.21 323.96 L 447.84 324 C 446.11 324 444.51 323.54 442.89 323.03 C 437.09 320.51 432.94 315.35 432.02 309.02 L 432 280.21 C 432 271.38 438.9 263.98 447.84 264 L 476.87 264.05 C 484.14 264.06 491.93 272.41 491.94 279.38 L 491.97 308.18 C 491.98 316.77 484.96 323.95 476.21 323.96 M 476.78 321.45 C 483.97 321.44 489.55 315.09 489.53 308.19 L 489.46 279.01 C 489.45 273.82 482.87 266.47 476.74 266.46 L 447.82 266.43 C 440.77 266.43 434.53 272.19 434.54 279.38 L 434.57 308.99 C 434.57 314.15 441.14 321.5 447.27 321.49 Z M 476.78 321.45 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 463.67 302.45 L 456.36 309.72 L 454.99 309.89 C 454.59 309.95 454.17 308.87 454.17 308.46 L 454.17 302.48 C 449.59 302.67 446.44 299.04 446.51 294.81 L 446.62 287.97 C 446.68 284.39 449.73 281.5 453.28 281.52 L 471.42 281.61 C 474.35 281.62 477.39 284.76 477.41 287.54 L 477.46 296.27 C 477.49 299.72 474.18 302.44 470.76 302.45 Z M 470.93 299.79 C 473.19 299.79 474.86 297.84 474.85 295.86 L 474.82 288.05 C 474.82 286.16 473.11 284.66 471.37 284.17 L 453.3 284.17 C 451.2 284.17 449.32 285.76 449.29 287.91 L 449.18 294.86 C 449.15 296.86 450.43 299.72 452.95 299.73 Z M 459.8 302.48 L 456.78 302.46 L 456.89 305.45 Z M 459.8 302.48 "/>
+  </g>
+</svg>

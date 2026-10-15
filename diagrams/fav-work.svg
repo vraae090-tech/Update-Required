@@ -1,0 +1,39 @@
+<!-- ============================================================
+     Lifted straight out of the book: page 27 of City Collection.
+     These are the same curves as the printed page, not a trace
+     and not a screenshot. One thing was changed and one only:
+     every colour became currentColor, so the drawing takes its
+     colour from the CSS and comes out white on the chapter
+     colour. There is no background here on purpose — the
+     section colour is meant to show through.
+     Made by pdfwork/extract_diagram.py
+
+     ============================================================
+     THIS FILE IS ONE THIRD OF favorites.svg. See fav-home.svg
+     for the full account of why the lettering came off and the
+     naming went back to the HTML - the short version is that a
+     name under a picture is a caption, and WORK was drawn into
+     the artwork as outlined letterforms rather than set as a
+     caption like every other label on this site.
+
+     The briefcase circle sits to the RIGHT of the other two on
+     the printed page, which is why its centre is further along
+     the x axis than theirs: 594.72, 297.66, radius 78.29. The
+     page put the three in a triangle. The icon-plate in the
+     chapter puts them in a row, because a row is what a strip of
+     captioned icons wants to be and because the plate is already
+     the component doing that job in two other runs. Nothing in
+     the drawing changed to allow it - only the box around it.
+     Wrapper translate is the centre minus 82, same as the others.
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 164 164"
+     role="img" aria-labelledby="t27work">
+
+  <title id="t27work">A circle holding a briefcase, for the place you work.</title>
+
+  <g transform="translate(-512.720, -215.660)">
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 673.01 297.66 C 673.01 340.88 637.95 375.92 594.71 375.92 C 551.47 375.92 516.41 340.88 516.41 297.66 C 516.41 254.44 551.47 219.4 594.71 219.4 C 637.95 219.4 673.01 254.44 673.01 297.66 M 667.56 297.66 C 667.56 257.45 634.95 224.85 594.71 224.85 C 554.48 224.85 521.86 257.45 521.86 297.66 C 521.86 337.88 554.48 370.48 594.71 370.48 C 634.95 370.48 667.56 337.88 667.56 297.66 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 621.01 332.99 L 567.73 333.02 C 562.47 332.22 558.56 328.08 557.95 322.81 L 558 289.11 C 558.01 283.54 562.65 278.88 568.08 278.84 L 575.81 278.79 L 575.86 266.86 C 575.91 256.68 584.45 248.75 594.39 248.58 C 604.46 248.41 613.1 256.26 613.54 266.55 L 613.6 278.79 L 621.8 278.9 C 626.67 279.39 631.37 283.92 631.37 289.05 L 631.42 322.59 C 631.43 328.18 626.8 332.98 621.01 332.99 M 602.86 277.07 L 602.94 278.79 L 608.8 278.79 L 608.73 266.54 C 608.41 258.98 601.97 253.32 594.66 253.35 C 587.39 253.37 580.73 259.03 580.69 266.57 L 580.62 278.79 L 586.44 278.78 L 586.71 277.06 Z M 626.66 288.69 C 625.89 286.05 624.16 284.32 621.68 283.59 L 602.94 283.59 L 602.94 290.79 L 586.47 290.79 L 586.47 283.59 L 568.1 283.59 C 565.28 283.86 562.78 286.12 562.79 289.1 L 562.83 322.82 C 562.84 325.12 565.52 328.15 567.91 328.15 L 620.6 328.25 C 623.83 328.25 626.65 325.93 626.65 322.57 Z M 600.21 283.55 L 589.16 283.59 L 589.18 288.12 L 600.23 288.08 Z M 600.21 283.55 "/>
+  </g>
+</svg>

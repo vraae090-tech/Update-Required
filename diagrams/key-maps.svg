@@ -1,0 +1,22 @@
+<!-- ============================================================
+     Lifted straight out of the book: page 39 of City Collection.
+     These are the same curves as the printed page, not a trace
+     and not a screenshot. One thing was changed and one only:
+     every colour became currentColor, so the drawing takes its
+     colour from the CSS and comes out white on the chapter
+     colour. There is no background here on purpose — the
+     section colour is meant to show through.
+     Made by pdfwork/extract_diagram.py
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64.00 64.00"
+     role="img" aria-labelledby="t39">
+
+  <title id="t39">The maps icon.</title>
+
+  <g transform="translate(-430.000, -406.000)">
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 476.21 467.96 L 447.84 468 C 446.11 468 444.51 467.54 442.89 467.03 C 437.09 464.51 432.94 459.35 432.02 453.02 L 432 424.21 C 432 415.38 438.9 407.98 447.84 408 L 476.87 408.05 C 484.14 408.06 491.93 416.41 491.94 423.38 L 491.97 452.18 C 491.98 460.77 484.96 467.95 476.21 467.96 M 476.78 465.45 C 483.97 465.44 489.55 459.09 489.53 452.19 L 489.46 423.01 C 489.45 417.82 482.87 410.47 476.74 410.46 L 447.82 410.43 C 440.77 410.43 434.53 416.19 434.54 423.38 L 434.57 452.99 C 434.57 458.15 441.14 465.5 447.27 465.49 Z M 476.78 465.45 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 460.7 459.2 C 455.35 454.15 448.68 446.24 446.95 439.36 C 445.65 434.18 447.22 428.57 451.13 424.88 C 456.5 419.8 465.11 419.89 470.38 425.06 C 474.28 428.88 475.59 434.47 474.34 439.69 C 473.42 442.47 472.22 444.85 470.69 447.32 C 467.86 451.57 464.69 455.28 460.7 459.2 M 460.69 456.65 C 463.62 453.63 465.97 450.85 468.23 447.72 C 469.75 445.43 471.04 443.22 472.09 440.66 C 473.96 435.39 472.78 429.4 468.4 425.73 C 463.86 421.93 456.96 422.05 452.56 426.04 C 448.23 429.96 447.25 436.24 449.57 441.48 C 452.09 447.14 456.27 452.24 460.69 456.65 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 463.75 436.1 C 463.75 437.81 462.36 439.2 460.66 439.2 C 458.95 439.2 457.56 437.81 457.56 436.1 C 457.56 434.39 458.95 433 460.66 433 C 462.36 433 463.75 434.39 463.75 436.1 "/>
+  </g>
+</svg>

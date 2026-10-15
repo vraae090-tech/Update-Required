@@ -1,0 +1,21 @@
+<!-- ============================================================
+     Lifted straight out of the book: page 35 of City Collection.
+     These are the same curves as the printed page, not a trace
+     and not a screenshot. One thing was changed and one only:
+     every colour became currentColor, so the drawing takes its
+     colour from the CSS and comes out white on the chapter
+     colour. There is no background here on purpose — the
+     section colour is meant to show through.
+     Made by pdfwork/extract_diagram.py
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 99.40 107.10"
+     role="img" aria-labelledby="t35">
+
+  <title id="t35">An envelope icon.</title>
+
+  <g transform="translate(-266.700, -401.900)">
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 360 476.28 C 360.07 490.93 347.92 502.5 333.63 502.34 C 321.05 502.2 309.48 502.97 296.82 502.02 C 284.71 501.11 273.77 489.38 273.27 477.18 C 272.65 462.27 272.96 448.61 273.13 433.83 C 273.29 420.1 284.75 408.67 298.45 408.5 C 311.29 408.34 323.05 407.91 336.01 408.71 C 348.12 409.46 359.72 421.16 359.78 433.27 Z M 355.73 476.87 L 355.8 432.76 C 353.97 422.75 346.41 414.77 336.45 412.67 L 299.63 412.59 C 287.45 412.57 277.23 422.04 277.31 434.45 L 277.59 477.77 C 277.64 487.28 287.3 497.07 296.78 497.72 C 309.85 498.62 321.8 498.06 334.8 497.99 C 346.02 497.93 355.71 488.38 355.73 476.87 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 335.65 475.38 L 296.18 475.38 C 291.69 475.38 287.99 471.06 288 466.78 L 288.04 443.17 C 288.04 438.94 292.05 435.41 296.21 435.4 L 334.69 435.36 C 338.96 435.36 343.53 438.55 343.55 443.2 L 343.66 466.76 C 343.68 470.96 340.59 475.38 335.65 475.38 M 336.45 442.39 C 336.99 441.98 337.37 441.55 337.58 441.21 C 337.74 440.96 336.68 440.43 336.28 440.23 L 296.26 440.18 L 293.74 441.21 L 315.81 458.27 Z M 338.84 466.98 L 338.81 446.56 L 315.82 464.2 L 292.8 446.51 L 292.77 466 C 292.77 468.51 294.05 470.62 296.87 470.58 L 335.3 470.58 C 337.27 470.58 338.84 469.07 338.84 466.98 "/>
+  </g>
+</svg>

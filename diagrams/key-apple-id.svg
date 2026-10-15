@@ -1,0 +1,25 @@
+<!-- ============================================================
+     Lifted straight out of the book: page 39 of City Collection.
+     These are the same curves as the printed page, not a trace
+     and not a screenshot. One thing was changed and one only:
+     every colour became currentColor, so the drawing takes its
+     colour from the CSS and comes out white on the chapter
+     colour. There is no background here on purpose — the
+     section colour is meant to show through.
+     Made by pdfwork/extract_diagram.py
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64.00 64.00"
+     role="img" aria-labelledby="t39">
+
+  <title id="t39">The apple id icon.</title>
+
+  <g transform="translate(-592.000, -406.000)">
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 638.21 467.96 L 609.84 468 C 608.11 468 606.51 467.54 604.89 467.03 C 599.09 464.51 594.94 459.35 594.02 453.02 L 594 424.21 C 594 415.38 600.9 407.98 609.84 408 L 638.87 408.05 C 646.14 408.06 653.93 416.41 653.94 423.38 L 653.97 452.18 C 653.98 460.77 646.96 467.95 638.21 467.96 M 638.78 465.45 C 645.97 465.44 651.55 459.09 651.53 452.19 L 651.46 423.01 C 651.45 417.82 644.87 410.47 638.74 410.46 L 609.82 410.43 C 602.77 410.43 596.53 416.19 596.54 423.38 L 596.57 452.99 C 596.57 458.15 603.14 465.5 609.27 465.49 Z M 638.78 465.45 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 620.47 432.63 C 620.47 437.07 616.86 440.68 612.42 440.68 C 607.97 440.68 604.37 437.07 604.37 432.63 C 604.37 428.18 607.97 424.58 612.42 424.58 C 616.86 424.58 620.47 428.18 620.47 432.63 M 617.59 432.63 C 617.59 429.77 615.27 427.46 612.42 427.46 C 609.56 427.46 607.25 429.77 607.25 432.63 C 607.25 435.48 609.56 437.8 612.42 437.8 C 615.27 437.8 617.59 435.48 617.59 432.63 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 618.93 447.34 C 615.89 444.48 608.73 444.51 605.8 447.44 C 605.09 448.16 604.78 449.05 604.76 450.04 C 604.75 450.86 604.04 451.44 603.3 451.42 C 602.53 451.4 601.89 450.78 601.89 449.96 C 601.89 446.45 604.55 444.05 607.78 443.05 C 610.9 442.07 614.25 442.09 617.34 443.14 C 620.5 444.21 623.09 446.7 622.93 450.12 C 622.89 450.9 622.17 451.44 621.49 451.42 C 620.75 451.41 620.09 450.82 620.08 450.05 C 620.07 449 619.71 448.06 618.93 447.34 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 644.71 430.76 L 629.72 430.76 C 628.92 430.76 628.35 430.05 628.34 429.34 C 628.32 428.63 628.89 427.88 629.72 427.88 L 644.66 427.88 C 645.47 427.88 646.06 428.55 646.09 429.27 C 646.11 429.98 645.57 430.76 644.71 430.76 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 644.71 438.2 L 629.72 438.2 C 628.92 438.2 628.35 437.49 628.34 436.78 C 628.32 436.07 628.89 435.32 629.72 435.32 L 644.66 435.32 C 645.47 435.32 646.06 435.98 646.09 436.71 C 646.11 437.41 645.57 438.2 644.71 438.2 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 639.75 445.63 L 629.71 445.64 C 628.92 445.64 628.35 444.93 628.33 444.22 C 628.32 443.5 628.9 442.76 629.72 442.76 L 639.7 442.76 C 640.51 442.76 641.1 443.42 641.12 444.14 C 641.15 444.86 640.61 445.63 639.75 445.63 "/>
+  </g>
+</svg>

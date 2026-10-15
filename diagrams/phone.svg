@@ -1,0 +1,157 @@
+<!-- ============================================================
+     FIG. 01 — THE SMARTPHONE DIAGRAM.  Chapter 01, book pages 12-17.
+
+     HOW THIS DRAWING WORKS, because it is not a picture file.
+
+     Every line is drawn with stroke="currentColor". currentColor means
+     "whatever the text colour is here", so the drawing does not know it
+     is white. It is told once, in the stylesheet, and inherits it the
+     way a paragraph inherits a typeface. If a section colour ever
+     changes, this file needs no edit at all.
+
+     Nothing below sets its own stroke-width either. The width is set
+     once, on the svg, in style.css. One number controls every line in
+     every diagram in the book, which is the whole reason for redrawing
+     these by hand instead of exporting pictures of them.
+
+     The trap worth knowing: when an SVG is scaled its strokes scale
+     with it, so a diagram running small would have thinner lines than
+     one running full width, which is exactly what uniform stroke is
+     meant to prevent. vector-effect: non-scaling-stroke, also set once
+     in the stylesheet, holds every line at one thickness on screen
+     however large the drawing is sitting.
+
+     The numbers 1-7 are drawn ON the diagram and match the numbered
+     list underneath it in the page. They are typed, not generated,
+     because they have to agree with a drawing.
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 560 650"
+     role="img"
+     aria-labelledby="phone-title">
+
+  <title id="phone-title">A drawing of an iPhone with seven parts numbered: home indicator bar, side button, ring and silent switch, volume buttons, touch screen, control centre and lightening port.</title>
+
+  <g fill="none"
+     stroke="currentColor"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+    <!-- the body of the phone -->
+    <rect x="160" y="60" width="240" height="500" rx="36"/>
+
+    <!-- the dynamic island -->
+    <rect x="250" y="78" width="60" height="13" rx="6.5"/>
+
+    <!-- 06. CONTROL CENTRE: the four buttons you get when you swipe
+         down from the top-right corner of the screen.
+
+         There is no little arrow drawn curling in from the corner.
+         There was one, and it came out looking like a stray mark, and
+         it was saying in a scribble what the numbered list underneath
+         already says in words. -->
+    <rect x="186" y="106" width="188" height="56" rx="15"/>
+
+    <!-- camera -->
+    <rect x="198" y="117" width="34" height="34" rx="10"/>
+    <circle cx="215" cy="134" r="7"/>
+
+    <!-- voice memo -->
+    <rect x="241" y="117" width="34" height="34" rx="10"/>
+    <rect x="254" y="123" width="8" height="15" rx="4"/>
+    <path d="M251 137a7 7 0 0 0 14 0"/>
+    <path d="M258 144v4"/>
+
+    <!-- timer -->
+    <rect x="284" y="117" width="34" height="34" rx="10"/>
+    <circle cx="301" cy="136" r="9.5"/>
+    <path d="M301 136v-6"/>
+    <path d="M297 124h8"/>
+
+    <!-- notes -->
+    <rect x="327" y="117" width="34" height="34" rx="10"/>
+    <path d="M335 128h18"/>
+    <path d="M335 135h18"/>
+    <path d="M335 142h11"/>
+
+    <!-- 03. RING / SILENT SWITCH, left edge -->
+    <rect x="156" y="182" width="8" height="34" rx="4"/>
+
+    <!-- 04. VOLUME BUTTONS, left edge. Two of them. -->
+    <rect x="156" y="236" width="8" height="50" rx="4"/>
+    <rect x="156" y="300" width="8" height="50" rx="4"/>
+
+    <!-- 02. SIDE BUTTON, right edge -->
+    <rect x="396" y="212" width="8" height="88" rx="4"/>
+
+    <!-- 01. HOME INDICATOR BAR -->
+    <path d="M240 520h80"/>
+
+    <!-- 07. LIGHTENING PORT, straddling the bottom edge -->
+    <rect x="266" y="552" width="28" height="16" rx="8"/>
+
+    <!-- ============================================================
+         THE NUMBERS.
+
+         One rule, and it is what stopped this drawing turning into a
+         plate of spaghetti.
+
+         Parts on the EDGE of the phone (2, 3, 4, 7) get a ring outside
+         the phone and a short line reaching in to touch them.
+
+         Parts on the SCREEN (1, 5, 6) get their ring placed on the
+         screen right beside the thing, with no line at all, because a
+         line from outside would have to cut through the body of the
+         phone to reach them. A diagram whose labels cross the object
+         is a diagram you have to decode.
+
+         Number 4 names two buttons, not one, so it gets a bracket
+         rather than a single line. A line touching only the lower
+         button would have been quietly wrong.
+
+         Every line here is solid. There is not a dashed or dotted line
+         anywhere in this drawing.
+         ============================================================ -->
+
+    <!-- 3 — ring / silent switch -->
+    <circle cx="96" cy="199" r="17"/>
+    <path d="M113 199h41"/>
+
+    <!-- 4 — volume buttons, bracketed across both -->
+    <circle cx="96" cy="293" r="17"/>
+    <path d="M113 293h23"/>
+    <path d="M136 261v64"/>
+    <path d="M136 261h18"/>
+    <path d="M136 325h18"/>
+
+    <!-- 2 — side button -->
+    <circle cx="464" cy="256" r="17"/>
+    <path d="M447 256h-41"/>
+
+    <!-- 7 — lightening port -->
+    <circle cx="280" cy="614" r="17"/>
+    <path d="M280 597v-25"/>
+
+    <!-- 6, 5 and 1 sit on the screen, no leader lines -->
+    <circle cx="340" cy="190" r="17"/>
+    <circle cx="280" cy="360" r="17"/>
+    <circle cx="348" cy="520" r="17"/>
+  </g>
+
+  <!-- The digits are filled rather than stroked so they stay crisp at
+       any size, and they take currentColor too, so they turn white
+       along with everything else. -->
+  <g fill="currentColor"
+     font-family="'Public Sans', system-ui, sans-serif"
+     font-size="19"
+     font-weight="600"
+     text-anchor="middle">
+    <text x="96"  y="206">3</text>
+    <text x="96"  y="300">4</text>
+    <text x="464" y="263">2</text>
+    <text x="280" y="621">7</text>
+    <text x="340" y="197">6</text>
+    <text x="280" y="367">5</text>
+    <text x="348" y="527">1</text>
+  </g>
+</svg>

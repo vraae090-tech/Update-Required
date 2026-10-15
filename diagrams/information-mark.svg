@@ -1,0 +1,22 @@
+<!-- ============================================================
+     Lifted straight out of the book: page 29 of City Collection.
+     These are the same curves as the printed page, not a trace
+     and not a screenshot. One thing was changed and one only:
+     every colour became currentColor, so the drawing takes its
+     colour from the CSS and comes out white on the chapter
+     colour. There is no background here on purpose — the
+     section colour is meant to show through.
+     Made by pdfwork/extract_diagram.py
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 217.80 217.90"
+     role="img" aria-labelledby="t29">
+
+  <title id="t29">A circled letter i, the information mark.</title>
+
+  <g transform="translate(-40.600, -170.200)">
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 252.45 279.18 C 252.45 336.03 206.36 382.11 149.52 382.11 C 92.67 382.11 46.59 336.03 46.59 279.18 C 46.59 222.34 92.67 176.25 149.52 176.25 C 206.36 176.25 252.45 222.34 252.45 279.18 M 245.55 279.18 C 245.55 226.14 202.56 183.15 149.52 183.15 C 96.48 183.15 53.48 226.14 53.48 279.18 C 53.48 332.22 96.48 375.22 149.52 375.22 C 202.56 375.22 245.55 332.22 245.55 279.18 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 159 327.07 C 159 332.3 154.43 336.27 149.55 336.27 C 144.62 336.27 140.05 332.31 140.05 327.13 L 140.04 261.59 C 140.04 256.38 144.57 252.37 149.55 252.38 C 154.48 252.39 159 256.39 159 261.59 Z M 159 327.07 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:currentColor;fill-opacity:1;" d="M 160.75 235.93 C 160.75 242.13 155.72 247.16 149.52 247.16 C 143.31 247.16 138.29 242.13 138.29 235.93 C 138.29 229.73 143.31 224.7 149.52 224.7 C 155.72 224.7 160.75 229.73 160.75 235.93 "/>
+  </g>
+</svg>
